@@ -507,6 +507,31 @@ section {
   .container {
     padding: 0 15px;
   }
+  .wrap {
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+  }
+  h2, h3, h4 {
+    font-size: 50px;
+    line-height: 130%;
+    margin-bottom: 20px;
+  }
+  .btn.sm {
+    padding: 12px 30px;
+    font-size: 16px;
+  }
+  body {
+    padding-top: 81px;
+  }
+}
+@media screen and (max-width: 700px) {
+  h2, h3, h4 {
+    font-size: 36px;
+    line-height: 120%;
+    text-shadow: -1px -1px 0 #000, 2px 2px 0 #000, 5px 5px 0px #FF7B00;
+    margin-bottom: 20px;
+  }
 }
 .header {
   background: rgba(255, 255, 255, 0.3);
@@ -560,6 +585,27 @@ section {
 }
 .header .logo img {
   display: block;
+}
+@media screen and (max-width: 1200px) {
+  .header__link {
+    font-size: 14px;
+    line-height: 16px;
+    padding: 15px 18px;
+  }
+  .header .logo {
+    max-width: 120px;
+  }
+  .header .btn {
+    margin-left: 30px;
+  }
+  .header .container {
+    padding: 0 15px;
+  }
+}
+@media screen and (max-width: 700px) {
+  .header__link {
+    display: none;
+  }
 }
 
 .modal {
@@ -738,8 +784,7 @@ main {
   text-align: left;
   min-height: 600px;
   height: 78vh;
-  max-height: 700px;
-  overflow: hidden;
+  max-height: 800px;
   background-image: url("../img/wheel.png");
   background-repeat: no-repeat;
   background-position: right center;
@@ -747,6 +792,9 @@ main {
      -moz-background-size: 45% auto;
        -o-background-size: 45% auto;
           background-size: 45% auto;
+  width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
 }
 main h1 {
   font-weight: 900;
@@ -770,7 +818,6 @@ main h1 span {
   -webkit-backdrop-filter: blur(1px);
           backdrop-filter: blur(1px);
   padding: 40px 0;
-  margin: 60px 0 0;
 }
 .features ol {
   list-style: none;
@@ -979,7 +1026,7 @@ main h1 span {
      -moz-border-radius: 10px;
           border-radius: 10px;
   text-align: center;
-  padding: 30px 30px 20px;
+  padding: 25px 30px 20px;
   margin: 0 10px 20px;
 }
 .payment .item img {
@@ -987,6 +1034,7 @@ main h1 span {
   height: 55px;
   -o-object-fit: contain;
      object-fit: contain;
+  background-position: center center;
   margin-bottom: 5px;
 }
 .payment .item p {
@@ -996,9 +1044,96 @@ main h1 span {
   line-height: 24px;
 }
 
-@media screen and (max-width: 1600px) {
-  main .logo {
-    max-width: 200px;
+@media screen and (max-width: 1200px) {
+  main {
+    padding-bottom: 80px;
+    background-position: center top 0px;
+    -webkit-background-size: 85% auto;
+       -moz-background-size: 85% auto;
+         -o-background-size: 85% auto;
+            background-size: 85% auto;
+    max-height: unset;
+    height: unset;
+    text-align: center;
+  }
+  main h1 {
+    margin: 70% auto 30px;
+  }
+  .games {
+    max-width: 100%;
+  }
+  .games .item {
+    width: 48%;
+    max-width: 48%;
+    margin-bottom: 1%;
+  }
+  .games .item img {
+    -webkit-border-radius: 12px;
+       -moz-border-radius: 12px;
+            border-radius: 12px;
+    width: 100%;
+  }
+  .faq .col {
+    width: 100% !important;
+    margin-bottom: 40px;
+  }
+  .features {
+    background: transparent;
+    -webkit-backdrop-filter: unset;
+            backdrop-filter: unset;
+    border: none;
+  }
+  .features .container {
+    display: block;
+  }
+  .features li {
+    max-width: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid #000000;
+    border-top: 1px solid #000000;
+    -webkit-backdrop-filter: blur(1px);
+            backdrop-filter: blur(1px);
+    padding: 30px 10px 30px 140px;
     margin-bottom: 15px;
+  }
+  .features li::before {
+    left: 40px;
+  }
+  .features li .heading {
+    margin-bottom: 8px;
+  }
+  .payment .item {
+    width: 220px;
+    padding: 25px 10px;
+  }
+  .payment .item img {
+    height: 50px;
+    margin-bottom: 8px;
+  }
+}
+@media screen and (max-width: 700px) {
+  main h1 {
+    font-size: 35px;
+    line-height: 120%;
+  }
+  .payment .wrap {
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+       -moz-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding: 0 15px;
+  }
+  .payment .item {
+    padding: 15px 5px;
+    width: 48%;
+    margin: 0 0 20px;
+  }
+  .payment .item p {
+    display: none;
+  }
+  .payment .item img {
+    max-width: 70%;
+    margin: 0;
   }
 }/*# sourceMappingURL=style.css.map */

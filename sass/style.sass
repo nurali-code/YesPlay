@@ -10,12 +10,14 @@ main
     text-align: left
     min-height: 600px
     height: 78vh
-    max-height: 700px
-    overflow: hidden
+    max-height: 800px
     background-image: url('../img/wheel.png')
     background-repeat: no-repeat
     background-position: right center
     background-size: 45% auto
+    width: 100%
+    max-width: 1920px
+    margin: 0 auto
     h1
         font-weight: 900
         font-size: 62px
@@ -37,7 +39,7 @@ main
     border-top: 1px solid #000000
     backdrop-filter: blur(1px)
     padding: 40px 0
-    margin: 60px 0 0
+
     ol
         list-style: none
         padding: 0
@@ -179,12 +181,13 @@ main
         border: 1px solid rgba(0, 0, 0, 0.5)
         border-radius: 10px
         text-align: center
-        padding: 30px 30px 20px
+        padding: 25px 30px 20px
         margin: 0 10px 20px
         img
             width: 80%
             height: 55px
             object-fit: contain
+            background-position: center center
             margin-bottom: 5px
 
         p
@@ -193,16 +196,78 @@ main
             font-size: 20px
             line-height: 24px
 
-@media screen and ( max-width: 1600px )
-    main
-        .logo
-            max-width: 200px
-            margin-bottom: 15px
-
-        h1
-
 @media screen and ( max-width: 1200px )
+
     main
+        padding-bottom: 80px
+        background-position: center top 0px
+        background-size: 85% auto
+        max-height: unset
+        height: unset
+        text-align: center
+        h1
+            margin: 70% auto 30px
+
+    .games
+        max-width: 100%
+        .item
+            width: 48%
+            max-width: 48%
+            margin-bottom: 1%
+            img
+                border-radius: 12px
+                width: 100%
+
+    .faq
+        .col
+            width: 100% !important
+            margin-bottom: 40px
+
+    .features
+        background: transparent
+        backdrop-filter: unset
+        border: none
+        .container
+            display: block
+
+        li
+            max-width: 100%
+            background: rgba(255, 255, 255, 0.1)
+            border-bottom: 1px solid #000000
+            border-top: 1px solid #000000
+            backdrop-filter: blur(1px)
+            padding: 30px 10px 30px 140px
+            margin-bottom: 15px
+            &::before
+                left: 40px
+
+            .heading
+                margin-bottom: 8px
+
+    .payment
+        .item
+            width: 220px
+            padding: 25px 10px
+            img
+                height: 50px
+                margin-bottom: 8px
 
 @media screen and ( max-width: 700px )
     main
+        h1
+            font-size: 35px
+            line-height: 120%
+    .payment
+        .wrap
+            justify-content: space-between
+            padding: 0 15px
+        .item
+            padding: 15px 5px
+            width: 48%
+            margin: 0 0 20px
+            p
+                display: none
+
+            img
+                max-width: 70%
+                margin: 0

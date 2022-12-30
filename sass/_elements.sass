@@ -163,7 +163,25 @@ section
     .container
         padding: 0 15px
 
+    .wrap
+        flex-wrap: wrap
+
+    h2, h3, h4
+        font-size: 50px
+        line-height: 130%
+        margin-bottom: 20px
+
     .btn
+        &.sm
+            padding: 12px 30px
+            font-size: 16px
+
+    body
+        padding-top: 81px
 
 @media screen and ( max-width: 700px )
-    .btn
+    h2, h3, h4
+        font-size: 36px
+        line-height: 120%
+        text-shadow: -1px -1px 0 #000, 2px 2px 0 #000, 5px 5px 0px #FF7B00
+        margin-bottom: 20px
