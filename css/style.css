@@ -736,9 +736,9 @@ main {
   position: relative;
   z-index: 1;
   text-align: left;
-  min-height: 700px;
+  min-height: 600px;
   height: 78vh;
-  max-height: 1180px;
+  max-height: 700px;
   overflow: hidden;
   background-image: url("../img/wheel.png");
   background-repeat: no-repeat;
@@ -770,6 +770,7 @@ main h1 span {
   -webkit-backdrop-filter: blur(1px);
           backdrop-filter: blur(1px);
   padding: 40px 0;
+  margin: 60px 0 0;
 }
 .features ol {
   list-style: none;
@@ -824,6 +825,7 @@ main h1 span {
 
 .games {
   max-width: 95%;
+  padding: 120px 0 0;
   margin: 0 auto;
 }
 .games h2 {
@@ -852,6 +854,9 @@ main h1 span {
      object-fit: cover;
 }
 
+.faq {
+  padding: 120px 0 60px;
+}
 .faq .col {
   width: 55%;
 }

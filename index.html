@@ -19,9 +19,9 @@
         <div class="container">
             <a href="#" class="logo"><img src="img/YesPlay.svg" alt="YesPlay"></a>
             <div class="col">
-                <a href="#" class="header__link">Top Slots</a>
-                <a href="#" class="header__link">Live Casino</a>
-                <a href="#" class="header__link">FAQ</a>
+                <a href="#slots" class="header__link">Top Slots</a>
+                <a href="#live" class="header__link">Live Casino</a>
+                <a href="#faq" class="header__link">FAQ</a>
                 <a href="#" class="btn sm">SIGN UP</a>
             </div>
         </div>
@@ -60,7 +60,7 @@
             </li>
     </section>
 
-    <section class="games">
+    <section class="games" id="slots">
         <h2 class="headline container">Top Slots</h2>
         <div class="wrap">
             <a href="#" class="item"><img src="./img/item-1.jpg" alt="img"></a>
@@ -74,7 +74,7 @@
         </div>
     </section>
 
-    <section class="games">
+    <section class="games" id="live">
         <h2 class="headline container">Top Live Casino</h2>
         <div class="wrap">
             <a href="#" class="item"><img src="./img/item-9.jpg" alt="img"></a>
@@ -88,7 +88,7 @@
         </div>
     </section>
 
-    <section class="faq">
+    <section class="faq" id="faq">
         <div class="container wrap">
             <div class="col">
                 <h2 class="headline">
@@ -216,6 +216,15 @@
                 }
             }
         };
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
 
     </script>
 
