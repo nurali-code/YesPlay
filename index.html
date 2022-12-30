@@ -5,7 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lottery</title>
+    <title>YesPlay</title>
+
+    <link rel="icon" type="image/png" sizes="16x16" href="./img/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon-32x32.png">
 
     <link rel="stylesheet" href="css/style.css">
 
@@ -131,9 +134,7 @@
     </section>
 
     <section class="payment">
-        <h2 class="container">
-
-        </h2>
+        <h2 class="container headline">Payment Methods</h2>
         <div class="wrap">
             <div class="item">
                 <img src="img/zapper.svg" alt="zapper">
@@ -204,13 +205,8 @@
         var btn = document.querySelectorAll('.dropdown-btn'),
             content = document.querySelectorAll('.dropdown-content');
 
-        // btn.addEventListener('click', () => {
-        //     content.style.display = "block";
-        // });
-
         for (let a = 0; a < btn.length; a++) {
             btn[a].onclick = () => {
-                console.log(content[a].offsetHeight);
                 if (btn[a].classList.contains('active')) {
                     btn[a].classList.remove('active');
                     content[a].classList.remove('active');

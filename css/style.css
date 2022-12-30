@@ -202,7 +202,6 @@ td, th {
 
 body {
   min-height: 100vh;
-  max-height: 1400px;
   color: #000;
   background-color: #fff;
   display: -webkit-box;
@@ -218,16 +217,15 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   font-family: "Montserrat", sans-serif;
+  padding: 103px 0 0;
   position: relative;
   z-index: 1;
-  padding: 103px 0 0;
 }
-body::before {
+body::before, body::after {
   content: "";
   display: block;
   width: 100%;
-  height: 110%;
-  max-height: 1400px;
+  height: 1400px;
   position: absolute;
   top: 0;
   left: 0;
@@ -240,6 +238,16 @@ body::before {
      -moz-background-size: cover;
        -o-background-size: cover;
           background-size: cover;
+}
+body::after {
+  top: auto;
+  bottom: 0;
+  -webkit-transform: rotate(-180deg);
+     -moz-transform: rotate(-180deg);
+      -ms-transform: rotate(-180deg);
+       -o-transform: rotate(-180deg);
+          transform: rotate(-180deg);
+  height: 1100px;
 }
 
 .container {
@@ -327,15 +335,16 @@ button:active {
   animation: blink 3.5s ease infinite alternate-reverse;
 }
 .btn.sm {
-  font-size: 20px;
+  font-size: 18px;
   line-height: 24px;
-  padding: 18px 50px;
-  -webkit-box-shadow: 0px 3px 0px #FF7B00;
-     -moz-box-shadow: 0px 3px 0px #FF7B00;
-          box-shadow: 0px 3px 0px #FF7B00;
-  -webkit-border-radius: 15px;
-     -moz-border-radius: 15px;
-          border-radius: 15px;
+  padding: 15px 40px;
+  -webkit-box-shadow: 3px 3px 0px #FF7B00;
+     -moz-box-shadow: 3px 3px 0px #FF7B00;
+          box-shadow: 3px 3px 0px #FF7B00;
+  -webkit-border-radius: 13px;
+     -moz-border-radius: 13px;
+          border-radius: 13px;
+  margin: 0;
 }
 .btn:hover, .btn:active {
   color: #000;
@@ -494,22 +503,9 @@ section {
             transform: translateX(600px) rotateZ(45deg);
   }
 }
-@media screen and (max-width: 1600px) {
+@media screen and (max-width: 1200px) {
   .container {
     padding: 0 15px;
-  }
-  .btn {
-    padding: 20px 100px;
-    border-width: 4px;
-    font-size: 26px;
-  }
-}
-@media screen and (max-width: 700px) {
-  .btn {
-    padding: 18px 80px;
-    border-width: 2px;
-    line-height: 120%;
-    font-size: 22px;
   }
 }
 .header {
@@ -549,7 +545,7 @@ section {
   line-height: 24px;
   text-align: center;
   text-transform: uppercase;
-  padding: 28px;
+  padding: 20px 28px;
 }
 .header__link:hover {
   text-decoration: underline;
@@ -558,7 +554,7 @@ section {
   margin-left: 40px;
 }
 .header .logo {
-  max-width: 160px;
+  max-width: 140px;
   margin: 0;
   display: block;
 }
@@ -690,11 +686,59 @@ section {
   }
 }
 
+footer {
+  z-index: 1000;
+  padding: 28px 0;
+  margin: 60px 0 0;
+  color: #fff;
+  background-color: #000;
+}
+footer p {
+  font-size: 14px;
+  font-weight: 400;
+}
+footer a {
+  color: #fff;
+  text-decoration: underline;
+}
+footer .container {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+     -moz-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+     -moz-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+footer .right {
+  text-align: right;
+}
+@media screen and (max-width: 700px) {
+  footer .container {
+    display: block;
+    text-align: center;
+  }
+  footer .right {
+    padding: 20px 0 0;
+    text-align: center;
+  }
+}
+
 main {
   position: relative;
   z-index: 1;
   text-align: left;
-  min-height: 78vh;
+  min-height: 700px;
+  height: 78vh;
+  max-height: 1180px;
   overflow: hidden;
   background-image: url("../img/wheel.png");
   background-repeat: no-repeat;
@@ -711,7 +755,7 @@ main h1 {
   letter-spacing: 0.01em;
   max-width: 620px;
   color: transparent;
-  margin: 15vh 0 38px;
+  margin: 15% 0 38px;
   color: #FF7B00;
   text-shadow: -2px -2px 0px #000, 3px 3px 0px #000, 6px 6px 0px #FF7B00;
 }
@@ -836,18 +880,45 @@ main h1 span {
   -webkit-border-radius: 10px;
      -moz-border-radius: 10px;
           border-radius: 10px;
+  position: relative;
+  z-index: 1;
   -webkit-transform: none !important;
      -moz-transform: none !important;
       -ms-transform: none !important;
        -o-transform: none !important;
           transform: none !important;
+}
+.dropdown-btn::before {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+  top: 50%;
+  right: 30px;
+  margin-top: -20px;
   background-image: url("../img/arrow.svg");
   background-repeat: no-repeat;
-  background-position: center right 30px;
-  -webkit-background-size: 40px 40px;
-     -moz-background-size: 40px;
-       -o-background-size: 40px;
-          background-size: 40px;
+  background-position: center;
+  -webkit-transition: -webkit-transform ease 0.3s;
+  transition: -webkit-transform ease 0.3s;
+  -o-transition: -o-transform ease 0.3s;
+  -moz-transition: transform ease 0.3s, -moz-transform ease 0.3s;
+  transition: transform ease 0.3s;
+  transition: transform ease 0.3s, -webkit-transform ease 0.3s, -moz-transform ease 0.3s, -o-transform ease 0.3s;
+  -webkit-background-size: contain;
+     -moz-background-size: contain;
+       -o-background-size: contain;
+          background-size: contain;
+}
+.dropdown-btn.active::before {
+  -webkit-transform: rotate(180deg);
+     -moz-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+       -o-transform: rotate(180deg);
+          transform: rotate(180deg);
 }
 .dropdown-content {
   font-size: 16px;
@@ -860,149 +931,26 @@ main h1 span {
   left: 6px;
   overflow: hidden;
   max-height: 0;
-  -webkit-transition: all ease 0.4s;
-  -o-transition: all ease 0.4s;
-  -moz-transition: all ease 0.4s;
-  transition: all ease 0.4s;
+  -webkit-transition: max-height ease 0.3s, opacity ease 0.3s, padding ease 0.5s;
+  -o-transition: max-height ease 0.3s, opacity ease 0.3s, padding ease 0.5s;
+  -moz-transition: max-height ease 0.3s, opacity ease 0.3s, padding ease 0.5s;
+  transition: max-height ease 0.3s, opacity ease 0.3s, padding ease 0.5s;
   padding: 0;
   opacity: 0;
 }
 .dropdown-content.active {
   opacity: 1;
   padding: 20px;
-  max-height: 300px;
+  max-height: 250px;
 }
 
-footer {
-  z-index: 1000;
-  padding: 28px 0;
-  margin: auto 0 0;
-  color: #fff;
-  background-color: #000;
+.payment {
+  max-width: 1700px;
+  margin: 0 auto;
 }
-footer p {
-  font-size: 14px;
-  font-weight: 400;
+.payment .headline {
+  margin-bottom: 40px;
 }
-footer a {
-  color: #fff;
-  text-decoration: underline;
-}
-footer .container {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: start;
-  -webkit-align-items: flex-start;
-     -moz-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-     -moz-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-footer .right {
-  text-align: right;
-}
-
-form {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-     -moz-box-orient: vertical;
-     -moz-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-     -moz-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-     -moz-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  position: fixed;
-  -webkit-border-radius: 0;
-     -moz-border-radius: 0;
-          border-radius: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  top: 0;
-  left: 0;
-  z-index: 999999999;
-  width: 100%;
-  height: 100%;
-  max-width: 100%;
-  visibility: hidden;
-  opacity: 0;
-  -webkit-transition: all ease 0.3s;
-  -o-transition: all ease 0.3s;
-  -moz-transition: all ease 0.3s;
-  transition: all ease 0.3s;
-}
-form.active {
-  visibility: visible;
-  opacity: 1;
-}
-form::before {
-  content: "";
-  display: block;
-  width: 400px;
-  max-width: 95%;
-  background-color: #fff;
-  height: 360px;
-  position: absolute;
-  top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-     -moz-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-       -o-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  left: 50%;
-  z-index: -1;
-  -webkit-border-radius: 30px;
-     -moz-border-radius: 30px;
-          border-radius: 30px;
-}
-form input {
-  display: block;
-  width: 320px;
-  max-width: 80%;
-  border: 1px solid #000;
-}
-form .btn {
-  margin: 0;
-  max-width: 50%;
-  padding: 20px 80px;
-  border-width: 2px;
-  line-height: 120%;
-  font-size: 26px;
-}
-form .btn-close {
-  right: 30px;
-  top: 30px;
-  cursor: pointer;
-  z-index: 1000000;
-  position: absolute;
-  right: 0;
-  padding: 30px;
-  text-align: center;
-  line-height: 40px;
-  font-size: 42px;
-  display: inline-block;
-  color: #fff;
-}
-
 .payment .wrap {
   -webkit-box-align: stretch;
   -webkit-align-items: stretch;
@@ -1047,45 +995,5 @@ form .btn-close {
   main .logo {
     max-width: 200px;
     margin-bottom: 15px;
-  }
-  main .ball {
-    max-width: 120px;
-  }
-  footer::before {
-    top: -40px;
-    height: -webkit-calc(100% + 40px);
-    height: -moz-calc(100% + 40px);
-    height: calc(100% + 40px);
-  }
-}
-@media screen and (max-width: 700px) {
-  main {
-    min-height: 650px;
-    height: 100vh;
-  }
-  main .logo {
-    max-width: 150px;
-    margin-bottom: 15px;
-  }
-  footer::before {
-    top: -40px;
-    height: -webkit-calc(100% + 40px);
-    height: -moz-calc(100% + 40px);
-    height: calc(100% + 40px);
-    -webkit-background-size: 1000px auto;
-       -moz-background-size: 1000px auto;
-         -o-background-size: 1000px auto;
-            background-size: 1000px auto;
-  }
-  footer .container {
-    display: block;
-    text-align: center;
-  }
-  footer .right {
-    padding: 20px 0 0;
-    text-align: center;
-  }
-  form .btn {
-    max-width: 100%;
   }
 }/*# sourceMappingURL=style.css.map */
