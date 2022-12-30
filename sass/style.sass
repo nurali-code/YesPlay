@@ -204,6 +204,7 @@ main
         background-size: 85% auto
         max-height: unset
         height: unset
+        min-height: unset
         text-align: center
         h1
             margin: 75% auto 30px
@@ -219,9 +220,12 @@ main
                 width: 100%
 
     .faq
+        padding-bottom: 40px
         .col
             width: 100% !important
             margin-bottom: 40px
+            &:last-of-type
+                margin-bottom: 0
 
     .features
         background: transparent
@@ -255,6 +259,7 @@ main
 
 @media screen and ( max-width: 700px )
     main
+        padding-bottom: 40px
         h1
             font-size: 35px
             line-height: 120%
@@ -275,5 +280,50 @@ main
                 max-width: 70%
                 margin: 0
 
-    .games 
-        padding-top: 100px
+    .games
+        padding-top: 60px
+        h2
+            margin-bottom: 40px
+
+        .item
+            img
+                border-radius: 8px
+
+            &:last-of-type
+                margin-bottom: 0
+
+    .dropdown
+        margin-bottom: 15px
+        &-btn
+            padding: 20px 50px 20px 20px
+            font-size: 15px
+            line-height: 130%
+            box-shadow: 4px 4px 0px #ffdb48
+            &::before
+                width: 30px
+                height: 30px
+                right: 20px
+
+        &-content
+            font-size: 14px
+
+    .features
+        li
+            padding: 30px 10px 30px calc( 23% + 20px )
+            &::before
+                width: 60px
+                height: 60px
+                line-height: 60px
+                font-size: 30px
+                left: 6%
+
+            .heading
+                font-size: 16px
+                line-height: 120%
+                margin-bottom: 2px
+
+            .text
+                font-size: 14px
+
+    .faq
+        padding: 60px 0 0
