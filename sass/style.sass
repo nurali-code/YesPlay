@@ -11,12 +11,12 @@ main
     min-height: 600px
     height: 78vh
     max-height: 800px
-    background-image: url('../img/wheel.png')
+    background-image: url('../img/main-img.png')
     background-repeat: no-repeat
     background-position: right center
-    background-size: 45% auto
+    background-size: 58% auto
     width: 100%
-    max-width: 1920px
+    max-width: 1700px
     margin: 0 auto
     h1
         font-weight: 900
@@ -32,6 +32,9 @@ main
 
         span
             color: #F5D42F
+
+    .container 
+        max-width: 1440px
 
 .features
     background: rgba(255, 255, 255, 0.1)
@@ -147,9 +150,16 @@ main
         &.active::before
             transform: rotate(180deg)
 
-    &-content
+    a
+        text-decoration: underline
+        color: #60a120
+        font-weight: bold
+
+    p, ol
         font-size: 16px
-        line-height: 140%
+        line-height: 150%
+
+    &-content
         background-color: #FFDB48
         position: relative
         border-radius: 0 0 10px 10px
@@ -162,7 +172,7 @@ main
         &.active
             opacity: 1
             padding: 20px
-            max-height: 250px
+            max-height: 550px
 
 .payment
     max-width: 1700px

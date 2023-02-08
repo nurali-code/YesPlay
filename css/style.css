@@ -438,6 +438,13 @@ section {
   padding: 60px 0;
 }
 
+ol {
+  padding: 0 0 0 25px;
+}
+ol li {
+  padding: 5px 0;
+}
+
 @-webkit-keyframes blink {
   0% {
     -webkit-transform: translateX(-40px) rotateZ(45deg);
@@ -811,15 +818,15 @@ main {
   min-height: 600px;
   height: 78vh;
   max-height: 800px;
-  background-image: url("../img/wheel.png");
+  background-image: url("../img/main-img.png");
   background-repeat: no-repeat;
   background-position: right center;
-  -webkit-background-size: 45% auto;
-     -moz-background-size: 45% auto;
-       -o-background-size: 45% auto;
-          background-size: 45% auto;
+  -webkit-background-size: 58% auto;
+     -moz-background-size: 58% auto;
+       -o-background-size: 58% auto;
+          background-size: 58% auto;
   width: 100%;
-  max-width: 1920px;
+  max-width: 1700px;
   margin: 0 auto;
 }
 main h1 {
@@ -835,6 +842,9 @@ main h1 {
 }
 main h1 span {
   color: #F5D42F;
+}
+main .container {
+  max-width: 1440px;
 }
 
 .features {
@@ -998,9 +1008,16 @@ main h1 span {
        -o-transform: rotate(180deg);
           transform: rotate(180deg);
 }
-.dropdown-content {
+.dropdown a {
+  text-decoration: underline;
+  color: #60a120;
+  font-weight: bold;
+}
+.dropdown p, .dropdown ol {
   font-size: 16px;
-  line-height: 140%;
+  line-height: 150%;
+}
+.dropdown-content {
   background-color: #FFDB48;
   position: relative;
   -webkit-border-radius: 0 0 10px 10px;
@@ -1019,7 +1036,7 @@ main h1 span {
 .dropdown-content.active {
   opacity: 1;
   padding: 20px;
-  max-height: 250px;
+  max-height: 550px;
 }
 
 .payment {
