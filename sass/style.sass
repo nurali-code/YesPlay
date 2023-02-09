@@ -11,21 +11,21 @@ main
     min-height: 600px
     height: 78vh
     max-height: 800px
-    background-image: url('../img/main-img.png')
+    background-image: url('../img/main-mob.png')
     background-repeat: no-repeat
     background-position: right center
-    background-size: 58% auto
+    background-size: auto 95%
     width: 100%
     max-width: 1700px
     margin: 0 auto
     h1
         font-weight: 900
-        font-size: 62px
+        font-size: 72px
         line-height: 120%
         letter-spacing: 0.01em
-        max-width: 620px
+        max-width: 720px
         color: transparent
-        margin: 15% 0 38px
+        margin: 12vh 0 38px
         color: #FF7B00
         text-shadow: -2px -2px 0px #000, 3px 3px 0px #000, 6px 6px 0px #FF7B00
         // text-shadow: 5px 5px 0px #FF7B00
@@ -33,7 +33,10 @@ main
         span
             color: #F5D42F
 
-    .container 
+    @media screen and ( min-width: 700px )
+        background-image: url('../img/main-img.png')
+
+    .container
         max-width: 1440px
 
 .features
@@ -41,6 +44,7 @@ main
     border-bottom: 1px solid #000000
     border-top: 1px solid #000000
     backdrop-filter: blur(1px)
+    margin: 40px 0 0
     padding: 40px 0
 
     ol
@@ -49,7 +53,7 @@ main
         counter-reset: item
 
     li
-        max-width: 348px
+        max-width: 375px
         padding-left: 100px
         position: relative
         z-index: 1
@@ -87,7 +91,8 @@ main
             margin: 0
 
 .games
-    max-width: 95%
+    width: 95%
+    max-width: 1920px
     padding: 120px 0 0
     margin: 0 auto
     h2
@@ -101,9 +106,16 @@ main
         width: 425px
         max-width: 24%
         margin: 0 0 30px
+        border-radius: 20px
+        overflow: hidden
         img
-            border-radius: 20px
+            display: block
             object-fit: cover
+            transition: transform ease-in-out .3s
+        @media screen and ( min-width: 1080px )
+            &:hover
+                img
+                    transform: scale(1.1) rotate(-1deg)
 
 .faq
     padding: 120px 0 60px
@@ -149,7 +161,6 @@ main
             background-size: contain
         &.active::before
             transform: rotate(180deg)
-
     a
         text-decoration: underline
         color: #60a120
@@ -172,7 +183,7 @@ main
         &.active
             opacity: 1
             padding: 20px
-            max-height: 550px
+            max-height: 750px
 
 .payment
     max-width: 1700px
@@ -191,7 +202,7 @@ main
         border: 1px solid rgba(0, 0, 0, 0.5)
         border-radius: 10px
         text-align: center
-        padding: 25px 30px 20px
+        padding: 25px 30px 10px
         margin: 0 10px 20px
         img
             width: 80%
@@ -201,23 +212,36 @@ main
             margin-bottom: 5px
 
         p
-            margin: 0
+            border-top: 1px solid rgba(0, 0, 0, .1)
+            margin: 7px 0 0
+            padding: 7px 0 2px
             font-weight: 500
             font-size: 20px
             line-height: 24px
 
-@media screen and ( max-width: 1200px )
+@media screen and ( max-width: 1600px )
+    main
+        .content
+            padding-left: 3%
+        h1
+            margin: 6% auto 30px 0
+            font-size: 68px
 
+@media screen and ( max-width: 1200px )
     main
         padding-bottom: 80px
         background-position: center top 10px
-        background-size: 85% auto
+        background-size: 90% auto
+        background-position: top 9% center
         max-height: unset
         height: unset
         min-height: unset
         text-align: center
         h1
-            margin: 75% auto 30px
+            margin: 75% auto 20px
+
+        .content 
+            padding-left: 0
 
     .games
         max-width: 100%
@@ -225,8 +249,8 @@ main
             width: 48%
             max-width: 48%
             margin-bottom: 1%
+            border-radius: 12px
             img
-                border-radius: 12px
                 width: 100%
 
     .faq
@@ -242,6 +266,7 @@ main
         backdrop-filter: unset
         border: none
         padding-bottom: 0
+        margin: 0
         .container
             display: block
 
@@ -279,12 +304,15 @@ main
         .wrap
             justify-content: space-between
             padding: 0 10px
+
         .item
-            padding: 15px 5px
+            padding: 15px 5px 5px
             width: 49%
             margin: 0 0 20px
             p
-                display: none
+                margin: 5px 0 0
+                font-size: 14px
+                padding: 4px 0 0
 
             img
                 max-width: 70%
@@ -296,9 +324,7 @@ main
             margin-bottom: 40px
 
         .item
-            img
-                border-radius: 8px
-
+            border-radius: 8px
             &:last-of-type
                 margin-bottom: 0
 
