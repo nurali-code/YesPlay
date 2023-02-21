@@ -552,10 +552,11 @@ ol li, ul li {
   }
   .btn {
     font-weight: 700;
-    font-size: 14px;
-    -webkit-border-radius: 15px;
-       -moz-border-radius: 15px;
-            border-radius: 15px;
+    font-size: 16px;
+    line-height: 30px;
+    -webkit-border-radius: 13px;
+       -moz-border-radius: 13px;
+            border-radius: 13px;
     padding: 10px 55px 9px;
     -webkit-box-shadow: 2px 2px 0px #ff7b00;
        -moz-box-shadow: 2px 2px 0px #ff7b00;
@@ -565,7 +566,7 @@ ol li, ul li {
     -webkit-box-shadow: 2px 2px 0px #ff7b00;
        -moz-box-shadow: 2px 2px 0px #ff7b00;
             box-shadow: 2px 2px 0px #ff7b00;
-    padding: 10px 30px 9px;
+    padding: 8px 28px 7px;
     font-size: 14px;
     -webkit-border-radius: 10px;
        -moz-border-radius: 10px;
@@ -660,6 +661,9 @@ ol li, ul li {
   }
 }
 @media screen and (max-width: 700px) {
+  .header .logo {
+    max-width: 100px;
+  }
   .header__link {
     display: none;
   }
@@ -961,6 +965,11 @@ main .container {
      -moz-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+     -moz-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
 }
 .games .item {
   width: 425px;
@@ -972,23 +981,24 @@ main .container {
   overflow: hidden;
 }
 .games .item img {
+  height: 100%;
   display: block;
   -o-object-fit: cover;
      object-fit: cover;
-  -webkit-transition: -webkit-transform ease-in-out 0.3s;
-  transition: -webkit-transform ease-in-out 0.3s;
-  -o-transition: -o-transform ease-in-out 0.3s;
-  -moz-transition: transform ease-in-out 0.3s, -moz-transform ease-in-out 0.3s;
-  transition: transform ease-in-out 0.3s;
-  transition: transform ease-in-out 0.3s, -webkit-transform ease-in-out 0.3s, -moz-transform ease-in-out 0.3s, -o-transform ease-in-out 0.3s;
+  -webkit-transition: -webkit-transform ease-out 0.3s;
+  transition: -webkit-transform ease-out 0.3s;
+  -o-transition: -o-transform ease-out 0.3s;
+  -moz-transition: transform ease-out 0.3s, -moz-transform ease-out 0.3s;
+  transition: transform ease-out 0.3s;
+  transition: transform ease-out 0.3s, -webkit-transform ease-out 0.3s, -moz-transform ease-out 0.3s, -o-transform ease-out 0.3s;
 }
 @media screen and (min-width: 1080px) {
   .games .item:hover img {
-    -webkit-transform: scale(1.1) rotate(-1deg);
-       -moz-transform: scale(1.1) rotate(-1deg);
-        -ms-transform: scale(1.1) rotate(-1deg);
-         -o-transform: scale(1.1) rotate(-1deg);
-            transform: scale(1.1) rotate(-1deg);
+    -webkit-transform: scale(1.08) rotate(-1deg);
+       -moz-transform: scale(1.08) rotate(-1deg);
+        -ms-transform: scale(1.08) rotate(-1deg);
+         -o-transform: scale(1.08) rotate(-1deg);
+            transform: scale(1.08) rotate(-1deg);
   }
 }
 
@@ -1011,8 +1021,8 @@ main .container {
 .dropdown-btn {
   font-weight: 600;
   font-size: 20px;
-  line-height: 110%;
-  padding: 33px 60px 31px 30px;
+  line-height: 140%;
+  padding: 28px 70px 26px 30px;
   width: 100%;
   text-align: left;
   background-color: #FDAF1A;
@@ -1040,7 +1050,7 @@ main .container {
   z-index: -1;
   pointer-events: none;
   top: 50%;
-  right: 30px;
+  right: 28px;
   margin-top: -20px;
   background-image: url("../img/arrow.svg");
   background-repeat: no-repeat;
@@ -1087,6 +1097,9 @@ main .container {
   transition: max-height ease 0.3s, opacity ease 0.3s, padding ease 0.5s;
   padding: 0;
   opacity: 0;
+}
+.dropdown-content p {
+  margin-bottom: 6px;
 }
 .dropdown-content.active {
   opacity: 1;
@@ -1176,10 +1189,17 @@ main .container {
   .games {
     max-width: 100%;
   }
+  .games .wrap {
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+       -moz-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
   .games .item {
-    width: 48%;
-    max-width: 48%;
-    margin-bottom: 1%;
+    width: 49%;
+    max-width: 49%;
+    margin-bottom: 2%;
     -webkit-border-radius: 12px;
        -moz-border-radius: 12px;
             border-radius: 12px;
@@ -1236,14 +1256,19 @@ main .container {
 @media screen and (max-width: 700px) {
   main {
     padding-bottom: 40px;
+    background-position: top 9% center;
   }
   main h1 {
+    max-width: 500px;
     font-size: 35px;
     line-height: 120%;
     text-shadow: -1px -1px 0 #000, 2px 2px 0 #000, 3.5px 3.5px 0px #F5D42F;
   }
   main h1 span {
     text-shadow: -1px -1px 0 #000, 2px 2px 0 #000, 3.5px 3.5px 0px #FF7B00;
+  }
+  .payment {
+    padding-bottom: 20px;
   }
   .payment .wrap {
     -webkit-box-pack: justify;
@@ -1260,8 +1285,8 @@ main .container {
   }
   .payment .item p {
     margin: 5px 0 0;
-    font-size: 14px;
-    padding: 4px 0 0;
+    font-size: 13px;
+    padding: 2px 0 0;
   }
   .payment .item img {
     max-width: 70%;
@@ -1277,9 +1302,6 @@ main .container {
     -webkit-border-radius: 8px;
        -moz-border-radius: 8px;
             border-radius: 8px;
-  }
-  .games .item:last-of-type {
-    margin-bottom: 0;
   }
   .dropdown {
     margin-bottom: 15px;
@@ -1299,6 +1321,12 @@ main .container {
   }
   .dropdown-content {
     font-size: 14px;
+  }
+  .dropdown-content p, .dropdown-content li {
+    font-size: 14px;
+  }
+  .dropdown-content li {
+    padding: 2px 0;
   }
   .features li {
     padding: 30px 10px 30px -webkit-calc(23% + 20px);

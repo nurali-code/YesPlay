@@ -102,6 +102,7 @@ main
     .wrap
         flex-wrap: wrap
         justify-content: space-evenly
+        align-items: stretch
 
     .item
         width: 425px
@@ -110,13 +111,14 @@ main
         border-radius: 20px
         overflow: hidden
         img
+            height: 100%
             display: block
             object-fit: cover
-            transition: transform ease-in-out .3s
+            transition: transform ease-out .3s
         @media screen and ( min-width: 1080px )
             &:hover
                 img
-                    transform: scale(1.1) rotate(-1deg)
+                    transform: scale(1.08) rotate(-1deg)
 
 .faq
     padding: 120px 0 60px
@@ -133,8 +135,8 @@ main
     &-btn
         font-weight: 600
         font-size: 20px
-        line-height: 110%
-        padding: 33px 60px 31px 30px
+        line-height: 140%
+        padding: 28px 70px 26px 30px
         width: 100%
         text-align: left
         background-color: #FDAF1A
@@ -153,7 +155,7 @@ main
             z-index: -1
             pointer-events: none
             top: 50%
-            right: 30px
+            right: 28px
             margin-top: -20px
             background-image: url('../img/arrow.svg')
             background-repeat: no-repeat
@@ -162,6 +164,7 @@ main
             background-size: contain
         &.active::before
             transform: rotate(180deg)
+
     a
         text-decoration: underline
         color: #60a120
@@ -181,6 +184,9 @@ main
         transition: max-height ease .3s, opacity ease .3s, padding ease .5s
         padding: 0
         opacity: 0
+        p
+            margin-bottom: 6px
+
         &.active
             opacity: 1
             padding: 20px
@@ -246,10 +252,13 @@ main
 
     .games
         max-width: 100%
+        .wrap
+            justify-content: space-between
+
         .item
-            width: 48%
-            max-width: 48%
-            margin-bottom: 1%
+            width: 49%
+            max-width: 49%
+            margin-bottom: 2%
             border-radius: 12px
             img
                 width: 100%
@@ -296,7 +305,10 @@ main
 @media screen and ( max-width: 700px )
     main
         padding-bottom: 40px
+        background-position: top 9% center
+
         h1
+            max-width: 500px
             font-size: 35px
             line-height: 120%
             text-shadow: -1px -1px 0 #000, 2px 2px 0 #000, 3.5px 3.5px 0px #F5D42F
@@ -304,6 +316,7 @@ main
                 text-shadow: -1px -1px 0 #000, 2px 2px 0 #000, 3.5px 3.5px 0px #FF7B00
 
     .payment
+        padding-bottom: 20px
         .wrap
             justify-content: space-between
             padding: 0 10px
@@ -314,8 +327,8 @@ main
             margin: 0 0 20px
             p
                 margin: 5px 0 0
-                font-size: 14px
-                padding: 4px 0 0
+                font-size: 13px
+                padding: 2px 0 0
 
             img
                 max-width: 70%
@@ -329,7 +342,6 @@ main
         .item
             border-radius: 8px
             &:last-of-type
-                margin-bottom: 0
 
     .dropdown
         margin-bottom: 15px
@@ -345,6 +357,11 @@ main
 
         &-content
             font-size: 14px
+            p, li
+                font-size: 14px
+
+            li
+                padding: 2px 0
 
     .features
         li
